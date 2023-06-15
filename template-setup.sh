@@ -108,6 +108,11 @@ if ! [[ "${UID}" -eq 0 ]]; then
 fi
 
 #### Change Password #####
+if [[ "${1}" == "--skip-password" ]]; then
+    o "Skipping password change..."
+    o "Make sure the password is actually changed, please."
+fi
+
 if ! [[ "${1}" == "--skip-password" ]]; then
     o "First, change the password:"
     i=1
@@ -119,9 +124,6 @@ if ! [[ "${1}" == "--skip-password" ]]; then
         fi
         o "Attempt ${i}/3 (or run with --skip-password to skip)"
     done
-else
-    o "Skipping password change..."
-    o "Make sure the password is actually changed, please."
 fi
 
 ##### Init Hostname #####
