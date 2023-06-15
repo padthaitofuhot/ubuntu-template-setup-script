@@ -124,7 +124,6 @@ else
     o "Make sure the password is actually changed, please."
 fi
 
-
 ##### Init Hostname #####
 export MY_HOSTNAME=''
 until checkhostname "${MY_HOSTNAME}"; do
