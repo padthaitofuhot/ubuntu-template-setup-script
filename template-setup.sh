@@ -116,7 +116,7 @@ fi
 if ! [[ "${1}" == "--skip-password" ]]; then
     o "First, change the password:"
     i=1
-    until passwd; do
+    until passwd "${USER}"; do
         if [[ $((i++)) -ge 3 ]]; then
             o "Skipped by persistence..."
             o "Make sure the password is actually changed, please."
